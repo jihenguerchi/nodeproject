@@ -1,0 +1,19 @@
+docker file
+FROM node
+WORKDIR /app :
+COPY package.json /app
+RUN npm install
+COPY . /app
+CMD [ "node","server.js"]
+cd node-app
+docker build .
+docker run -p 3000:3001 036004f827c7
+docker images
+ docker stop 036004f827c7
+$ docker run -p 3004:3000 --name c1-node 036004f827c7
+$ docker stop c1-node
+c1-node
+$ docker start c1-node
+c1-node
+docker container prune
+docker run -p 3000:3001 --rm d3f5da1c524631f429dea6da65a0ec211313e24372ae860f0b4e1b10134cf61c 
